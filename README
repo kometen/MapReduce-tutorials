@@ -1,0 +1,11 @@
+Java-programs from Hadoop Definitive Guide and online Hadoop tutorials.
+
+A note to self is:
+
+mkdir weather_classes
+
+javac -cp /Users/claus/devel/hadoop/hadoop-core-0.20.203.0.jar -d weather_classes MaxTemperatureMapper.java
+javac -cp /Users/claus/devel/hadoop/hadoop-core-0.20.203.0.jar -d weather_classes MaxTemperatureReducer.java
+javac -cp /Users/claus/devel/hadoop/hadoop-core-0.20.203.0.jar:weather_classes -d weather_classes MaxTemperature.java
+jar -cvf maxtemperature.jar -C weather_classes .
+hadoop jar maxtemperature.jar no.gnome.mapreduce.MaxTemperature input/temperature output
