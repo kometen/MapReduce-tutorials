@@ -1,0 +1,9 @@
+module no.gnome.mapreduce {
+class Weather {
+	ustring year;
+	int month;
+	int day;
+	int temperature;
+	ustring quality;
+}
+}

@@ -18,7 +18,7 @@ public class MaxTemperatureReducer extends MapReduceBase implements Reducer<Text
 			w = (Weather) values.next();
 			wm = (wm.getTemperature() > w.getTemperature()) ? wm : w;
 		}
-		String out = wm.getYear() + "," + Integer.toString(wm.getMonth()) + "," + Integer.toString(wm.getDay());
+		String out = wm.getYear() + "," + Integer.toString(wm.getMonth()) + "," + Integer.toString(wm.getDay()) + "," + Integer.toString(wm.getTemperature());
 		output.collect(key, new Text(out));
 	}
 }
