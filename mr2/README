@@ -1,0 +1,10 @@
+Zsh-loop to extract gsod-weather data.
+
+for i in {1939..1979}                                
+do
+mkdir $i
+tar xf gsod_${i}.tar -C ${i}
+find ${i} -name \*.gz|xargs gunzip -c  >> test_input                                  
+rm -rf ${i}
+done
+
